@@ -54,7 +54,7 @@ app.post('/api/chat', async (req, res) => {
           .join('\n')
       : 'No directly relevant BIS information was found in the local knowledge base.';
 
-    console.log('Knowledge context:', knowledgeContext);
+    
 
     console.log('Relevant BIS knowledge:', relevantKnowledge);
 
