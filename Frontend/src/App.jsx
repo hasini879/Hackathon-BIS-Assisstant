@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 function App() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   async function sendMessage() {
     if (message.trim() === '') return;
@@ -11,6 +12,18 @@ function App() {
     const currentMessage = message;
 
     setMessage('');
+
+    setLoading(true),
+
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      {
+        role: 'user',
+        text: currentMessage,
+      },
+
+    ]);
+  
 
     const response = await fetch('https://hackathon-bis-assisstant.onrender.com/api/chat', {
       method: 'POST',
@@ -24,12 +37,11 @@ function App() {
 
     const data = await response.json();
 
+    setLoading(false),
+
     setMessages((prevMessages) => [
       ...prevMessages,
-      {
-        role: 'user',
-        text: currentMessage,
-      },
+
       {
         role: 'assistant',
         text: data.reply,
@@ -66,6 +78,12 @@ function App() {
             </p>
           </div>
         )}
+
+          {loading && (
+            <div className="loading">
+              BIS AI is thinking...
+            </div>
+          )}
 
         {messages.map((chatMessage, index) => (
           <div
