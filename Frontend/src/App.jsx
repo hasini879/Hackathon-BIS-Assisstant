@@ -79,11 +79,6 @@ function App() {
           </div>
         )}
 
-          {loading && (
-            <div className="loading">
-              BIS AI is thinking...
-            </div>
-          )}
 
         {messages.map((chatMessage, index) => (
           <div
@@ -95,6 +90,13 @@ function App() {
             </ReactMarkdown>
           </div>
         ))}
+
+          {loading && (
+            <div className="loading">
+              BIS AI is thinking...
+            </div>
+          )}
+          
       </div>
 
       <div className="input-area">

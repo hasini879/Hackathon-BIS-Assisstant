@@ -140,7 +140,8 @@ body {
 /* Input area */
 
 .input-area {
-  padding: 18px 12%;
+  padding: 12px 15px;
+  padding-right: 90px;
   background: white;
   border-top: 1px solid #dce2ec;
   display: flex;
@@ -172,6 +173,25 @@ body {
 
 .input-area button:hover {
   opacity: 0.9;
+}
+
+
+.loading {
+  align-self: flex-start;
+  color: #9aa3b2;
+  font-size: 13px;
+  padding-left: 2px;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Mobile responsive design */
@@ -215,7 +235,7 @@ body {
   }
 
   .input-area {
-    padding: 12px;
+    padding: 12px 15px 45px;
   }
 
   .input-area input {
