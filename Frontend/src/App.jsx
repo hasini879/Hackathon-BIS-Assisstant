@@ -6,13 +6,11 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  async function sendMessage() {
-    if (message.trim() === '') return;
-
-    const currentMessage = message;
+  async function sendMessage(text) {
+    const currentMessage = text || message;
+    if (currentMessage.trim() === '') return;
 
     setMessage('');
-
     setLoading(true),
 
     setMessages((prevMessages) => [
@@ -84,22 +82,22 @@ function App() {
 
             <div className="suggestions">
 
-              <button>
+              <button onClick={() => sendMessage("What is BIS?")}>
                 What is BIS?
                 <span>→</span>
               </button>
 
-              <button>
+              <button onClick={() => sendMessage("How do I verify HUID?")}>
                 How do I verify HUID?
                 <span>→</span>
               </button>
 
-              <button>
+              <button onClick={() => sendMessage("What is the ISI Mark?")}>
                 What is the ISI Mark?
                 <span>→</span>
               </button>
 
-              <button>
+              <button onClick={() => sendMessage("How do I get a BIS licence?")}>
                 How do I get a BIS licence?
                 <span>→</span>
               </button>
