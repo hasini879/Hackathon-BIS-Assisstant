@@ -69,13 +69,43 @@ function App() {
 
       <div className="chat">
         {messages.length === 0 && (
-          <div className="assistant">
-            <h2>Welcome to BIS AI Assistant 👋</h2>
+          <div className="welcome-screen">
+
+            <div className="bis-symbol">
+              BIS
+            </div>
+
+            <h2>BIS AI Assistant</h2>
 
             <p>
-              I can help you understand BIS standards, certification,
-              ISI marks, hallmarking, licences and consumer services.
+              Your intelligent assistant for Indian Standards,
+              certification and BIS services.
             </p>
+
+            <div className="suggestions">
+
+              <button>
+                What is BIS?
+                <span>→</span>
+              </button>
+
+              <button>
+                How do I verify HUID?
+                <span>→</span>
+              </button>
+
+              <button>
+                What is the ISI Mark?
+                <span>→</span>
+              </button>
+
+              <button>
+                How do I get a BIS licence?
+                <span>→</span>
+              </button>
+
+            </div>
+
           </div>
         )}
 
