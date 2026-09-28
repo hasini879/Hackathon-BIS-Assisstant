@@ -235,7 +235,8 @@ body {
   }
 
   .input-area {
-    padding: 12px 15px 45px;
+    padding: 12px 15px;
+    margin-bottom: 55px;
   }
 
   .input-area input {
